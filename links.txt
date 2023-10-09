@@ -1,0 +1,15 @@
+-Quickstart guid: https://learn.microsoft.com/en-us/azure/kinect-dk/set-up-azure-kinect-dk
+-Update Software: https://learn.microsoft.com/en-us/azure/kinect-dk/update-device-firmware
+
+-include firmeae in projekt with nuget: https://www.nuget.org/packages/microsoft.azure.kinect.sensor/
+
+-install azure kinect nuget package in vs code: https://learn.microsoft.com/en-us/azure/kinect-dk/add-library-to-project
+
+-open2d with azure kinect: http://www.open3d.org/docs/latest/tutorial/Basic/azure_kinect.html
+
+
+Use Azure Kinect with python:
+- https://github.com/brendandburns/py-k4a
+- https://github.com/ibaiGorordo/pyKinectAzure
+- https://github.com/jrterven/KinZ-Python
+- https://github.com/hexops-graveyard/Azure-Kinect-Python
