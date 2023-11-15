@@ -25,7 +25,7 @@ def main():
     while True:
         capture = k4a.get_capture()
         if np.any(capture.depth):
-            cv2.imshow("k4a", colorize(capture.depth, (None, 5000), cv2.COLORMAP_HSV))
+            cv2.imshow("k4a", capture.depth)
             key = cv2.waitKey(10)
             if key != -1:
                 cv2.destroyAllWindows()
