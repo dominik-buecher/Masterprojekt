@@ -37,9 +37,21 @@ def main():
     color_image = capture.color[:, :, :3]
     cv2.imshow("Color Image", color_image)
     cv2.waitKey(0)
+
+    height, width, _ = color_image.shape
+    top_margin = int(height * 0.20)
+    bottom_margin = int(height * 0.75)
+    left_margin = int(width * 0.30)
+    right_margin = int(width * 0.65)
+
+    cropped_color_image = color_image[top_margin:bottom_margin, left_margin:right_margin]
+    cv2.imshow("Color Image", cropped_color_image)
+    cv2.waitKey(0)
     # Save color image
-    color_file_name = f"dataset/color_images/color_image_{file_suffix}.png"
+    color_file_name = f"dataset/original_images/color_images/color_image_{file_suffix}.png"
     cv2.imwrite(color_file_name, color_image)
+    color_file_name = f"dataset/cropped_images/color_images/color_image_cropped_{file_suffix}.png"
+    cv2.imwrite(color_file_name, cropped_color_image)
 
 #########################################################################################################
 
@@ -51,9 +63,22 @@ def main():
             )
     cv2.imshow("Depth Image", depth_colored)
     cv2.waitKey(0)
+
+    height, width, _ = depth_colored.shape
+    top_margin = int(height * 0.24)
+    bottom_margin = int(height * 0.76)
+    left_margin = int(width * 0.24)
+    right_margin = int(width * 0.76)
+    
+    cropped_depth_colored = depth_colored[top_margin:bottom_margin, left_margin:right_margin]
+    cv2.imshow("Depth Image", cropped_depth_colored)
+    cv2.waitKey(0)
+   
     # Save normal depth image
-    depth_file_name = f"dataset/depth_images/normal/depth_image_{file_suffix}.png"
+    depth_file_name = f"dataset/original_images/depth_images/normal/depth_image_{file_suffix}.png"
     cv2.imwrite(depth_file_name, depth_colored)
+    depth_file_name = f"dataset/cropped_images/depth_images/normal/depth_image_cropped_{file_suffix}.png"
+    cv2.imwrite(depth_file_name, cropped_depth_colored)
 
 #########################################################################################################
 
@@ -61,9 +86,21 @@ def main():
     depth_colored_colorized = colorize(depth_image, (None, 5000), cv2.COLORMAP_HSV)
     cv2.imshow("Depth Image", depth_colored_colorized)
     cv2.waitKey(0)
+
+    height, width, _ = depth_colored_colorized.shape
+    top_margin = int(height * 0.24)
+    bottom_margin = int(height * 0.76)
+    left_margin = int(width * 0.24)
+    right_margin = int(width * 0.76)
+    
+    cropped_depth_colored = depth_colored_colorized[top_margin:bottom_margin, left_margin:right_margin]
+    cv2.imshow("Depth Image", cropped_depth_colored)
+    cv2.waitKey(0)
     # Save colorized depth image
-    depth_file_name = f"dataset/depth_images/colorized/depth_image_colorized_{file_suffix}.png"
+    depth_file_name = f"dataset/original_images/depth_images/colorized/depth_image_colorized_{file_suffix}.png"
     cv2.imwrite(depth_file_name, depth_colored_colorized)
+    depth_file_name = f"dataset/cropped_images/depth_images/colorized/depth_image_colorized_cropped_{file_suffix}.png"
+    cv2.imwrite(depth_file_name, cropped_depth_colored)
 
 #########################################################################################################
 
@@ -74,9 +111,22 @@ def main():
     adjusted_ir_image = infrared_image * normalized_depth
     cv2.imshow("Infrared Image", adjusted_ir_image)
     cv2.waitKey(0)
+
+    height, width = adjusted_ir_image.shape
+    top_margin = int(height * 0.24)
+    bottom_margin = int(height * 0.76)
+    left_margin = int(width * 0.24)
+    right_margin = int(width * 0.76)
+    
+    cropped_ir_image = adjusted_ir_image[top_margin:bottom_margin, left_margin:right_margin]
+    cv2.imshow("Depth Image", cropped_ir_image)
+    cv2.waitKey(0)
+
     # Save infrared image
-    infrared_file_name = f"dataset/infrared_images/infrared_image_{file_suffix}.png"
+    infrared_file_name = f"dataset/original_images/infrared_images/infrared_image_{file_suffix}.png"
     cv2.imwrite(infrared_file_name, adjusted_ir_image)
+    infrared_file_name = f"dataset/cropped_images/infrared_images/infrared_image_cropped_{file_suffix}.png"
+    cv2.imwrite(infrared_file_name, cropped_ir_image)
 
 #########################################################################################################
 
@@ -90,7 +140,7 @@ def main():
     pcd.colors = o3d.utility.Vector3dVector(colors / 255.0)
 
     # Save pointcloud
-    file_path = fr"dataset\pointcloud\pointcloud_{file_suffix}.ply"
+    file_path = fr"dataset\original_images\pointcloud\pointcloud_{file_suffix}.ply"
     o3d.io.write_point_cloud(file_path, pcd)
 
 #########################################################################################################

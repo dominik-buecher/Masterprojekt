@@ -1,0 +1,2 @@
+1: Ausschneiden von pointcloud Daten für eine bessere Übersicht
+2: Erfassen von Bildern für das Dataset

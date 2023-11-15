@@ -16,7 +16,7 @@ def visualize_pointcloud(file_path):
 
 def main():
 
-    file_path = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\dataset\pointcloud\pointcloud_cameraPos-0_white_2.ply"
+    file_path = fr"dataset\orignial_images\pointcloud\pointcloud_cameraPos-0_white_2.ply"
 
     visualize_pointcloud(file_path)
 
