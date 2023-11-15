@@ -13,3 +13,48 @@ Use Azure Kinect with python:
 - https://github.com/ibaiGorordo/pyKinectAzure
 - https://github.com/jrterven/KinZ-Python
 - https://github.com/hexops-graveyard/Azure-Kinect-Python
+
+Examples und Pipeline für python: 
+- https://github.com/microsoft/Azure-Kinect-Samples
+
+
+Add opencv zum projekt:
+- https://learnopencv.com/code-opencv-in-visual-studio/
+
+
+kamera direkt mit python ansteuern:
+- https://github.com/microsoft/Azure-Kinect-Sensor-SDK/blob/develop/src/python/k4a/examples/point_cloud_capture.py
+
+
+python package für azue kinect das geht!:
+- https://github.com/etiennedub/pyk4a/blob/master/example/viewer_depth.py
+
+Um den Bild-Stream aus diesem C++-Skript in ein Python-Skript weiterzuleiten, müssen Sie eine Schnittstelle verwenden, die es ermöglicht, Daten zwischen C++ und Python zu übertragen. Dies kann auf verschiedene Arten erreicht werden, aber eine gängige Methode ist die Verwendung einer gemeinsamen Bibliothek wie OpenCV, um die Bilder im C++-Skript zu erfassen und dann über eine Schnittstelle wie Python OpenCV oder eine Socket-Verbindung an das Python-Skript weiterzuleiten. Hier ist eine allgemeine Vorgehensweise:
+
+1. Installieren Sie OpenCV sowohl für C++ als auch für Python, wenn Sie dies noch nicht getan haben. Sie können OpenCV in C++ verwenden, um die Bilder zu erfassen und zu verarbeiten, und in Python, um die empfangenen Bilder anzuzeigen oder weiter zu verarbeiten.
+
+2. Ändern Sie Ihr C++-Skript, um die Bilder mit OpenCV zu erfassen und zu verarbeiten. Dies erfordert, dass Sie die OpenCV-Bibliothek in Ihrem C++-Code verwenden. Sie können das OpenCV-C++-API verwenden, um den Bild-Stream zu erhalten und die Bilder zu verarbeiten.
+
+3. In Ihrem C++-Skript können Sie die Bilder entweder in Echtzeit anzeigen oder sie in einer geeigneten Form an Ihr Python-Skript senden. Dies kann auf verschiedene Arten geschehen, z.B. indem Sie die Bilder in einer bestimmten Reihenfolge speichern und von Ihrem Python-Skript periodisch überwachen oder indem Sie die Bilder über eine Socket-Verbindung senden.
+
+4. In Ihrem Python-Skript können Sie OpenCV verwenden, um den Bild-Stream von Ihrem C++-Skript zu empfangen und die Bilder anzuzeigen oder weiter zu verarbeiten. Sie können beispielsweise eine Schleife erstellen, um den Bild-Stream von der C++-Anwendung abzurufen und die Bilder anzuzeigen.
+
+Es gibt verschiedene Möglichkeiten, wie Sie die Kommunikation zwischen C++ und Python realisieren können, je nach Ihren spezifischen Anforderungen. Eine Möglichkeit ist die Verwendung von Sockets, bei der Ihr C++-Skript die Bilder über einen Socket an Ihr Python-Skript sendet. Dies erfordert die Verwendung von Socket-Programmierung in beiden Sprachen.
+
+Bitte beachten Sie, dass dies ein komplexeres Unterfangen ist und je nach Ihren spezifischen Anforderungen und Fähigkeiten in C++ und Python einige Zeit in Anspruch nehmen kann. Wenn Sie weitere Hilfe oder spezifischere Anweisungen benötigen, teilen Sie bitte mehr Informationen über Ihre genauen Anforderungen, damit ich Ihnen besser helfen kann.
+
+
+
+Wie funktioniert die Tiefenkamera: https://learn.microsoft.com/de-de/azure/kinect-dk/depth-camera
+
+Koordinatensystem der Kameras: https://learn.microsoft.com/de-de/azure/kinect-dk/coordinate-systems
+
+
+
+
+
+
+
+
+
+
