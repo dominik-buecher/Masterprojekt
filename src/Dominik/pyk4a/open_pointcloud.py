@@ -16,8 +16,8 @@ def visualize_pointcloud(file_path):
 
 def main():
 
-    file_path = fr"dataset\original_images\pointcloud\pointcloud_black_1.ply"
-
+    file_path = "dataset/original_images/pointcloud/pointcloud_white_1_26.ply"
+    #file_path = "dataset/pointcloud_white_1_26_augmented.ply"
     visualize_pointcloud(file_path)
 
 

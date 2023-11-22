@@ -50,8 +50,8 @@ Wie funktioniert die Tiefenkamera: https://learn.microsoft.com/de-de/azure/kinec
 Koordinatensystem der Kameras: https://learn.microsoft.com/de-de/azure/kinect-dk/coordinate-systems
 
 
-
-
+Label the new data for image segmentation:
+	-https://catchzeng.medium.com/train-a-custom-image-segmentation-model-using-tensorflow-object-detection-api-mask-r-cnn-a8cbfd2321e0
 
 
 
