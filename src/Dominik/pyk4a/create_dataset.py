@@ -8,7 +8,8 @@ from helpers import colorize
 def main():
     # Festgelegter String für das Kürzel im Dateinamen
     # Camera-position_backround-color_iteration-number
-    file_suffix = "cameraPos-0_white_2"
+    # file_suffix = "cameraPos-200_white_0"
+    file_suffix = "8"
 
     k4a = PyK4A(
         Config(
@@ -83,9 +84,9 @@ def main():
 #########################################################################################################
 
     # Show colorized depth image
-    depth_colored_colorized = colorize(depth_image, (None, 5000), cv2.COLORMAP_HSV)
-    cv2.imshow("Depth Image", depth_colored_colorized)
-    cv2.waitKey(0)
+    depth_colored_colorized = colorize(depth_image, (300, 1200), cv2.COLORMAP_JET) #COLORMAP_JET COLORMAP_HSV
+    # cv2.imshow("Depth Image", depth_colored_colorized)
+    # cv2.waitKey(0)
 
     height, width, _ = depth_colored_colorized.shape
     top_margin = int(height * 0.24)
@@ -94,8 +95,8 @@ def main():
     right_margin = int(width * 0.76)
     
     cropped_depth_colored = depth_colored_colorized[top_margin:bottom_margin, left_margin:right_margin]
-    cv2.imshow("Depth Image", cropped_depth_colored)
-    cv2.waitKey(0)
+    # cv2.imshow("Depth Image", cropped_depth_colored)
+    # cv2.waitKey(0)
     # Save colorized depth image
     depth_file_name = f"dataset/original_images/depth_images/colorized/depth_image_colorized_{file_suffix}.png"
     cv2.imwrite(depth_file_name, depth_colored_colorized)
@@ -109,8 +110,8 @@ def main():
     depth_image = capture.depth
     normalized_depth = (depth_image - np.min(depth_image)) / (np.max(depth_image) - np.min(depth_image))
     adjusted_ir_image = infrared_image * normalized_depth
-    cv2.imshow("Infrared Image", adjusted_ir_image)
-    cv2.waitKey(0)
+    # cv2.imshow("Infrared Image", adjusted_ir_image)
+    # cv2.waitKey(0)
 
     height, width = adjusted_ir_image.shape
     top_margin = int(height * 0.24)
@@ -119,8 +120,8 @@ def main():
     right_margin = int(width * 0.76)
     
     cropped_ir_image = adjusted_ir_image[top_margin:bottom_margin, left_margin:right_margin]
-    cv2.imshow("Depth Image", cropped_ir_image)
-    cv2.waitKey(0)
+    # cv2.imshow("Depth Image", cropped_ir_image)
+    # cv2.waitKey(0)
 
     # Save infrared image
     infrared_file_name = f"dataset/original_images/infrared_images/infrared_image_{file_suffix}.png"

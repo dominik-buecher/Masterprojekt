@@ -31,13 +31,14 @@ def main():
             break
 
     # Verarbeiten und anzeigen Sie das Tiefenbild
-    depth_colored = colorize(capture.depth, (None, 5000), cv2.COLORMAP_HSV)
+    #depth_colored = colorize(capture.depth, (300, 550), cv2.COLORMAP_JET) # COLORMAP_HOT  COLORMAP_HSV  COLORMAP_JET
+    depth_colored = colorize(capture.depth, (300, 1200), cv2.COLORMAP_JET)
     cv2.imshow("Depth Image", depth_colored)
     cv2.waitKey(0)
 
     # Speichern Sie das Tiefenbild
     file_name = f"dataset/depth_images/depth_image_{file_suffix}.png"
-    cv2.imwrite(file_name, depth_colored)
+    #cv2.imwrite(file_name, depth_colored)
 
     k4a.stop()
 

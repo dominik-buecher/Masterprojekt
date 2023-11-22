@@ -11,7 +11,7 @@ if __name__ == "__main__":
 	device_config = pykinect.default_configuration
 	device_config.color_format = pykinect.K4A_IMAGE_FORMAT_COLOR_BGRA32
 	device_config.color_resolution = pykinect.K4A_COLOR_RESOLUTION_720P
-	device_config.depth_mode = pykinect.K4A_DEPTH_MODE_WFOV_2X2BINNED
+	device_config.depth_mode = pykinect.K4A_DEPTH_MODE_NFOV_2X2BINNED
 	# print(device_config)
 
 	# Start device

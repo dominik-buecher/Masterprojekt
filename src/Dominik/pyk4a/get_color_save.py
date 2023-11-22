@@ -36,7 +36,7 @@ def main():
 
     # Speichern Sie das Farbbild
     file_name = f"dataset/color_images/color_image_{file_suffix}.png"
-    cv2.imwrite(file_name, color_image)
+    #cv2.imwrite(file_name, color_image)
 
     k4a.stop()
 
