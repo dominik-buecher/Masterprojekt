@@ -7,7 +7,8 @@ import math
 from gendata import dataDir, isCoordEqual
 import cloudComPy as cc
 
-pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\data\temp\pointcloud_cropped.ply"
+#pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\data\temp\pointcloud_cropped.ply"
+pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\temp\pointcloud_cropped.ply"
 cloud = cc.loadPointCloud(pointcloud_file_path)
 print("cloud: ", cloud)
 
@@ -17,8 +18,8 @@ if cc.isPluginRANSAC_SD():
     
     # RANSAC-Parameter festlegen
     params = cc.RANSAC_SD.RansacParams()
-    params.maxSphereRadius = 100
-    params.minSphereRadius = 1
+    params.maxSphereRadius = 50
+    params.minSphereRadius = 10
 
     params.optimizeForCloud(cloud)
     print("RANSAC_SD parameters: ", params)
@@ -26,7 +27,8 @@ if cc.isPluginRANSAC_SD():
     meshes, clouds = cc.RANSAC_SD.computeRANSAC_SD(cloud, params)
     print("meshes: ", meshes)
     print("clouds: ", clouds)
-    base_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\Dominik\CloudComPy"
+    #base_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\Dominik\CloudComPy"
+    base_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\Dominik\CloudComPy"
     for i, mesh in enumerate(meshes):
         if mesh is not None and mesh.isA(cc.CC_TYPES.SPHERE):
  
@@ -42,5 +44,7 @@ for m in meshes:
     if m is not None:
         shapes.append(m)
 
-#cc.SaveEntities(shapes, os.path.join(base_path, "ransac.ply"))
-cc.SaveEntities(shapes, r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\Dominik\CloudComPy\dataSample.ply")
+cc.SavePointCloud(cloud, rf"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\Dominik\CloudComPy\dataSample.ply")
+
+cc.SaveEntities(shapes, os.path.join(base_path, "ransac.pcd"))
+#cc.SaveEntities(shapes, r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\Dominik\CloudComPy\dataSample.ply")

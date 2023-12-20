@@ -6,13 +6,13 @@ from pyk4a import Config, PyK4A
 def main():
     # Festgelegter String für das Kürzel im Dateinamen
     # Camera-position_backround-color_iteration-number
-    file_suffix = "cameraPos-0_white_1"
+    file_suffix = "tomato"#"cameraPos-0_white_1"
 
     k4a = PyK4A(
         Config(
             color_resolution=pyk4a.ColorResolution.RES_720P,
             camera_fps=pyk4a.FPS.FPS_5,
-            depth_mode=pyk4a.DepthMode.WFOV_2X2BINNED,
+            depth_mode=pyk4a.DepthMode.NFOV_UNBINNED,
             synchronized_images_only=True,
         )
     )
@@ -43,7 +43,7 @@ def main():
     pcd.colors = o3d.utility.Vector3dVector(colors / 255.0)
 
     # Speichern Sie die PointCloud im PLY-Format
-    file_path = fr"dataset\pointcloud\pointcloud_{file_suffix}.ply"
+    file_path = f"data/pointcloud_{file_suffix}.ply"
     o3d.io.write_point_cloud(file_path, pcd)
 
     k4a.stop()
