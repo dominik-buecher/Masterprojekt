@@ -1,3 +1,10 @@
 1: Ausschneiden von pointcloud Daten für eine bessere Übersicht
-2: Erfassen von Bildern für das Dataset
 3: PointNet für Klassifizierungs und Segmentierungs Model für pointclouds
+
+labelme original/ --labels labels.txt
+
+
+
+1. Get calibaration data and use it for the transformation from pointcloud to rgb image
+
+2. Use RANSAC to segmentation of the grapes in the pointclouds

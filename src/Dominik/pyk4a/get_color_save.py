@@ -16,7 +16,7 @@ def main():
         )
     )
     k4a.start()
-
+    
     # getters and setters directly get and set on device
     k4a.whitebalance = 4500
     assert k4a.whitebalance == 4500
