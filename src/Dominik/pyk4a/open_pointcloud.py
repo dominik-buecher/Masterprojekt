@@ -16,7 +16,8 @@ def visualize_pointcloud(file_path):
 
 def main():
 
-    file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\pointcloud_tomato.ply"
+    file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\pointcloud_kugel.ply"
+    #file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\temp\pointcloud_cropped.ply"
     #file_path = "dataset/pointcloud_white_1_26_augmented.ply"
     visualize_pointcloud(file_path)
 

@@ -35,8 +35,9 @@ if cc.isPluginRANSAC_SD():
             sphere_cloud_name = f"sphere_{i + 1}.ply"
             sphere_cloud_path = os.path.join(base_path, sphere_cloud_name)
             print(f"Saving sphere {i + 1} to {sphere_cloud_path}")
-            mesh.saveToFile(sphere_cloud_path)
+            #mesh.saveToFile(sphere_cloud_path)
             ret = cc.SavePointCloud(cloud, rf"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\Dominik\CloudComPy\dataSample_{i + 1}.ply")
+            ret = cc.SavePointCloud(mesh, rf"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\Dominik\CloudComPy\dataSample_{i + 1}.ply")
 
 # Speichern der ursprünglichen Cloud mit den gefundenen Formen
 shapes = [cloud]

@@ -82,6 +82,7 @@ if __name__ == "__main__":
     #pointcloud_file = "data/pointcloud_white_1_45.ply"
     pointcloud_file = "data/pointcloud_white_2_16.ply"
     #pointcloud_file = "data/pointcloud_white_3_75.ply"
+    pointcloud_file = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\temp\pointcloud_cropped.ply"
     extract_grapes(pointcloud_file)
     # crop_pointcloud(pointcloud_file)
 
