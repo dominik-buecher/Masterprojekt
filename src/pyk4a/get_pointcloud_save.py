@@ -6,7 +6,7 @@ from pyk4a import Config, PyK4A
 def main():
     # Festgelegter String für das Kürzel im Dateinamen
     # Camera-position_backround-color_iteration-number
-    file_suffix = "kugel"#"cameraPos-0_white_1"
+    file_suffix = "kugel_frei"#"cameraPos-0_white_1"
 
     k4a = PyK4A(
         Config(

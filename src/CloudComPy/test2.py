@@ -2,24 +2,22 @@ import os
 import sys
 import math
 
-#os.environ["_CCTRACE_"]="ON" # only if you want C++ debug traces
-
-from gendata import dataDir, isCoordEqual
+#from gendata import dataDir, isCoordEqual
 import cloudComPy as cc
+from cloudComPy import RANSAC_SD
 
 #pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\data\temp\pointcloud_cropped.ply"
-pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\temp\pointcloud_cropped.ply"
+pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\cropped_kugel_frei.ply"
 cloud = cc.loadPointCloud(pointcloud_file_path)
 print("cloud: ", cloud)
 
 if cc.isPluginRANSAC_SD():
     print("RANSAC_SD is available!")
-    import cloudComPy.RANSAC_SD
     
     # RANSAC-Parameter festlegen
     params = cc.RANSAC_SD.RansacParams()
-    params.maxSphereRadius = 50
-    params.minSphereRadius = 10
+    params.maxSphereRadius = 3
+    params.minSphereRadius = 0.5
 
     params.optimizeForCloud(cloud)
     print("RANSAC_SD parameters: ", params)

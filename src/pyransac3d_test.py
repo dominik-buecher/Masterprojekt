@@ -1,38 +1,39 @@
 # import pyransac3d as pyrsc
 
 # points = load_points(.) # Load your point cloud as a numpy array (N, 3)
-
 # sph = pyrsc.Sphere()
 # center, radius, inliers = sph.fit(points, thresh=0.4)
 
-import cloudComPy as cc 
+#import cloudComPy as cc
+ 
 import sys
-
 import numpy as np
 import open3d as o3d
 
 sys.path.append(".")
 import pyransac3d as pyran
 
-mesh_in = o3d.geometry.TriangleMesh.create_sphere(radius=0.05)
-vertices = np.asarray(mesh_in.vertices)
-noise = 0.5
-vertices += np.random.logistic(0, noise, size=vertices.shape)
-mesh_in.vertices = o3d.utility.Vector3dVector(vertices)
-mesh_in.compute_vertex_normals()
-mesh_in.paint_uniform_color([0.1, 0.9, 0.1])
+# mesh_in = o3d.geometry.TriangleMesh.create_sphere(radius=0.05)
+# vertices = np.asarray(mesh_in.vertices)
+# noise = 0.5
+# vertices += np.random.logistic(0, noise, size=vertices.shape)
+# mesh_in.vertices = o3d.utility.Vector3dVector(vertices)
+# mesh_in.compute_vertex_normals()
+#mesh_in.paint_uniform_color([0.1, 0.9, 0.1])
 
 
 sph = pyran.Sphere()
-sph = pyran.Circle()
+#sph = pyran.Circle()
+#sph = pyran.Cylinder()
 
 #pointcloud_file = "data/pointcloud_white_3_75.ply"
-pointcloud_file = "data/temp/pointcloud_cropped.ply"
+#pointcloud_file = "data/temp/pointcloud_cropped.ply"
+pointcloud_file = "data/cropped_kugel_frei.ply"
 pointcloud = o3d.io.read_point_cloud(pointcloud_file)
 
 points = np.asarray(pointcloud.points)
 
-center, radius, inliers = sph.fit(points, thresh=4.0, maxIteration=2000)
+center, radius, inliers = sph.fit(points, thresh=0.4, maxIteration=2000)
 print("center: " + str(center))
 print("radius: " + str(radius))
 
