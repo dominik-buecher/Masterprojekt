@@ -45,7 +45,7 @@ def is_majority_green(colors_matrix):
 #pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\cropped_kugel_frei.ply"
 #pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data1\pointcloud_77.ply"
 # pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\trauben_pointcloud.ply"
-pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\dataset\pointcloud\pointcloud_noBackround5_only_close.ply"
+pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_1.ply"
 
 cloud = cc.loadPointCloud(pointcloud_file_path)
 print("cloud: ", cloud)
@@ -91,21 +91,21 @@ if cc.isPluginRANSAC_SD():
             # # sphere_cloud_path = os.path.join(base_path, sphere_cloud_name)
             # print(f"Saving sphere {i + 1} to {sphere_cloud_path}")
             #mesh.saveToFile(sphere_cloud_path)
-            if mesh.getRadius() < 15.0 or mesh.getRadius() < 5.0:
+            if mesh.getRadius() < 20.0 and mesh.getRadius() > 5.0:
                 path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i + 1}.ply"
                 ret = cc.SavePointCloud(clouds[i], path)
                 temp = o3d.io.read_point_cloud(path)
 
 
                 colors_float = np.asarray(temp.colors)
-                green = is_majority_green(colors_float)
+                #green = is_majority_green(colors_float)
 
-                if green == 1:
-                    ret = cc.SaveMesh(mesh, rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_{i + 1}.ply")
+                #if green == 1:
+                ret = cc.SaveMesh(mesh, rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_{i + 1}.ply")
 
-                    mesh_cloud = mesh.getAssociatedCloud()
-                    ret = cc.SavePointCloud(clouds[i], rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i + 1}.ply")
-                    
+                mesh_cloud = mesh.getAssociatedCloud()
+                ret = cc.SavePointCloud(clouds[i], rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\cloud_mesh_{i + 1}.ply")
+                
 
 
 # Speichern der ursprünglichen Cloud mit den gefundenen Formen

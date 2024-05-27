@@ -1,0 +1,10 @@
+    Eingabedaten: Unsere Daten bestehen aus Punktwolken, repräsentiert als Listen von Tupeln mit vier Werten, die vermutlich Farb- und Distanzinformationen darstellen.
+    Labels: Die Daten werden binär klassifiziert: 1 für gute Trauben und 0 für schlechte Trauben.
+    Neuronales Netz Architektur:
+        Das Modell beginnt mit einer Flatten-Schicht, um die Eingabeform umzuwandeln.
+        Zwei Dense-Schichten mit jeweils 128 und 64 Neuronen, aktiviert durch die ReLU-Funktion.
+        Eine Dense-Ausgabeschicht mit einer Sigmoid-Aktivierungsfunktion für die binäre Klassifikation.
+    Trainingsparameter: Das Modell wird mit dem Adam-Optimierer trainiert, verwendet die binary_crossentropy-Verlustfunktion und wird auf die Genauigkeit (accuracy) optimiert. Es wird über 10 Epochen trainiert, wobei eine Batch-Größe von 32 verwendet wird.
+    Datensplitting: Die Daten werden in Trainings- und Testsets aufgeteilt, wobei 80% für das Training und 20% für Tests verwendet werden. Zusätzlich werden 20% der Trainingsdaten für die Validierung verwendet.
+
+Dieses Modell dient als grundlegende Grundlage zur Unterscheidung von guten und schlechten Trauben basierend auf Punktwolken-Daten. Je nach Anforderungen können Anpassungen in der Architektur oder den Hyperparametern erforderlich sein, um die Genauigkeit zu verbessern oder spezifische Anforderungen zu erfüllen.

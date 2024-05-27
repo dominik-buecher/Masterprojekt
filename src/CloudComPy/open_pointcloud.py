@@ -98,15 +98,15 @@ def crop_pointcloud(file_path):
 
 
 def main():
-    i = 9
-    file_path1 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i}.ply"
-    file_path2 = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i+1}.ply"
-    file_path3 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i+2}.ply"
-    file_path4 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i+3}.ply"
-    file_path5 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i+4}.ply"
-    file_path6 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i+5}.ply"
-    file_path7 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i+6}.ply"
-    file_path8 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\temp\mesh_cloud_{i+7}.ply"
+    i = 1
+    file_path1 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i}.ply"
+    file_path2 = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i+1}.ply"
+    file_path3 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i+2}.ply"
+    file_path4 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i+3}.ply"
+    file_path5 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i+4}.ply"
+    file_path6 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i+5}.ply"
+    file_path7 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i+6}.ply"
+    file_path8 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_{i+7}.ply"
 
     # file_path1 = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_1.ply"
     # file_path2 = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\mesh_cloud_7.ply"
@@ -122,18 +122,19 @@ def main():
 ## 100 viele und nah
 
     #file_path_cloud = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\pointcloud_1.ply"
-    file_path_cloud = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\pointcloud.ply"
+    #path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\meshes\pointcloud_copped_1.ply\mesh_cloud\mesh_cloud_1.ply"
+    path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_1.ply\mesh\mesh_2.ply"
     #path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\dataset\pointcloud\pointcloud_noBackround5_only_close.ply"
-    path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\dataset\pointcloud\pointcloud_noBackround5_only_close.ply"
-    path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_97.ply"
-    file_path2 = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data5\mesh_57.ply"
+    file_path_cloud = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\cropped_pointcloud\pointcloud_copped_1.ply"
+    file_path_cloud = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_1.ply\mesh_cloud\mesh_cloud_2.ply"
+    #file_path2 = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data5\mesh_57.ply"
     #file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\pointcloud_kugel_frei.ply"
     #file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\data\temp\pointcloud_cropped.ply"
     #file_path = "dataset/pointcloud_white_1_26_augmented.ply"
-    #visualize_pointcloud(path, file_path_cloud)
+    visualize_pointcloud(path, file_path_cloud)
     #crop_pointcloud(file_path)
     #visualize_pointcloud3(file_path_cloud, file_path1, file_path2, file_path3, file_path4, file_path5, file_path6, file_path7, file_path8)
-    visualize_pointcloud1(path)
+    #visualize_pointcloud1(path)
 
 if __name__ == "__main__":
     main()

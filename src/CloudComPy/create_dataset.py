@@ -9,8 +9,8 @@ def main():
     # Festgelegter String für das Kürzel im Dateinamen
     # Camera-position_backround-color_iteration-number
     # file_suffix = "cameraPos-200_white_0"
-    file_suffix = "100"
-    good = 1
+    file_suffix = "60"
+    good = 0
     k4a = PyK4A(
         Config(
             color_resolution=pyk4a.ColorResolution.RES_1536P,  # Farbauflösung
