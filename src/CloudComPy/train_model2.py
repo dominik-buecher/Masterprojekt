@@ -133,7 +133,7 @@ def plot_confusion_matrix(test_labels, test_predictions, version):
 
 def main():
     
-    version = 4
+    version = 5
     
     positive_dir = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\mesh_cloud"
     negative_dir = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\mesh_cloud"
