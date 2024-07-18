@@ -123,8 +123,8 @@ def main():
 
     #file_path_cloud = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data\pointcloud_1.ply"
     #path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\meshes\pointcloud_copped_1.ply\mesh_cloud\mesh_cloud_1.ply"
-    path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_1.ply"
-    #path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\dataset\pointcloud\pointcloud_noBackround5_only_close.ply"
+    path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_100.ply"
+    path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_100.ply"
     file_path_cloud = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\cropped_pointcloud\pointcloud_copped_1.ply"
     file_path_cloud = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_1.ply\mesh_cloud\mesh_cloud_2.ply"
     #file_path2 = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data5\mesh_57.ply"
