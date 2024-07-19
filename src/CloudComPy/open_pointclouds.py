@@ -148,7 +148,7 @@ def pointcloud_gray_mesh_depthcolor(folder_path, pointcloud_file_path):
 
     # Durchlaufen der Dateien im Ordner und Überprüfen der Mesh-Dateien
     for filename in os.listdir(folder_path):
-        if filename.startswith("mesh_cloud") and filename.endswith(".ply"):
+        if filename.startswith("mesh_") and filename.endswith(".ply"):
             mesh_file_path = os.path.join(folder_path, filename)
             
             # Laden der Mesh-Datei als Pointcloud
@@ -272,16 +272,18 @@ def mesh_only_green(folder_path, pointcloud_file_path):
 
 
 # Pfad zu dem Ordner, in dem sich die Pointcloud und die Mesh-Dateien befinden
-folder_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\data"
-folder_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_10.ply\mesh_cloud"
+folder_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_10.ply\mesh_cloud_color_green"
+# folder_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_10.ply\mesh_cloud"
+
 # Pfad zur Pointcloud-Datei
 pointcloud_file_path = os.path.join(folder_path, "pointcloud.ply")
-pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_10.ply"
+pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_10.ply"
+# pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_10.ply"
 
 
 
-pointcloud_normal_mesh_red(folder_path, pointcloud_file_path)
-pointcloud_green_mesh_red(folder_path, pointcloud_file_path)
+# pointcloud_normal_mesh_red(folder_path, pointcloud_file_path)
+# pointcloud_green_mesh_red(folder_path, pointcloud_file_path)
 pointcloud_gray_mesh_depthcolor(folder_path, pointcloud_file_path)
-pointcloud_red_mesh_normal(folder_path, pointcloud_file_path)
-mesh_only_green(folder_path, pointcloud_file_path)
+# pointcloud_red_mesh_normal(folder_path, pointcloud_file_path)
+# mesh_only_green(folder_path, pointcloud_file_path)

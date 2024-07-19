@@ -6,6 +6,8 @@ import numpy as np
 import cloudComPy as cc
 from cloudComPy import RANSAC_SD
 import shutil
+
+
 # conda activate CloudComPy310
 # cd C:\Users\domin\Documents\Studium\Master\CloudComPy310
 # envCloudComPy.bat
@@ -27,15 +29,13 @@ for filename in os.listdir(folder_path):
         cloud = cc.loadPointCloud(pointcloud_file_path)
         print("cloud: ", cloud)
 
-        pcd = o3d.io.read_point_cloud(pointcloud_file_path)
-
         if cc.isPluginRANSAC_SD():
             print("RANSAC_SD is available!")
             
             # Konfigurieren der RANSAC-Parameter
             params = cc.RANSAC_SD.RansacParams()
             params.minSphereRadius = 5.0
-            params.maxSphereRadius = 12.0
+            params.maxSphereRadius = 15.0
             params.supportPoints = 100
             params.allowSimplification = True
             params.epsilon = 0.005
