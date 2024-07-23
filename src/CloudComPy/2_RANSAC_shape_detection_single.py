@@ -6,17 +6,10 @@ import numpy as np
 import cloudComPy as cc
 from cloudComPy import RANSAC_SD
 import shutil
+import time
 
-
-# conda activate CloudComPy310
-# cd C:\Users\domin\Documents\Studium\Master\CloudComPy310
-# cd C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\CloudComPy310
-# envCloudComPy.bat
-# python C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\test2.py
-# python C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\2_RANSAC_shape_detection_single.py
-#from gendata import dataDir, isCoordEqual
-
-
+# Startzeit messen
+start_time = time.time()
 
 # Definieren des Ordners mit Pointcloud-Dateien
 folder_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\new"
@@ -38,26 +31,27 @@ for filename in os.listdir(folder_path):
             params = cc.RANSAC_SD.RansacParams()
             # params.minSphereRadius = 5.0
             # params.maxSphereRadius = 15.0
-            # params.supportPoints = 100
-            # params.allowSimplification = True
-            # params.epsilon = 0.005
-            # params.bitmapEpsilon = 0.001
-            # params.optimizeForCloud(cloud)
+            params.supportPoints = 100
+            params.allowSimplification = True
+            params.epsilon = 0.005
+            params.bitmapEpsilon = 0.001
+            params.optimizeForCloud(cloud)
             print("RANSAC_SD parameters: ", params)
             
             # Ausführen der RANSAC-Shape-Erkennung
-            # params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_SPHERE, True)
-            # params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_PLANE, False)
-            # params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_CYLINDER, False)
-            # params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_CONE, False)
-            # params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_TORUS, False)
+            params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_SPHERE, True)
+            params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_PLANE, True)
+            params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_CYLINDER, True)
+            params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_CONE, True)
+            params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_TORUS, True)
             
             meshes, clouds = cc.RANSAC_SD.computeRANSAC_SD(cloud, params)
             print("meshes: ", meshes)
             print("clouds: ", clouds)
 
             # Speichern und Verarbeiten der Shapes
-            base_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy"
+            # base_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy"
+            base_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy"
             
             # Pfade für temporäre Dateien und für die Speicherung der Meshes und Mesh-Clouds
             temp_path = os.path.join(base_path, "tmp")
@@ -94,3 +88,9 @@ for filename in os.listdir(folder_path):
 
 print("Processing complete.")
 shutil.rmtree(temp_path)
+
+# Endzeit messen
+end_time = time.time()
+elapsed_time = end_time - start_time
+
+print(f"Die Ausführung dauerte {elapsed_time:.2f} Sekunden.")

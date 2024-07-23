@@ -6,7 +6,7 @@ import numpy as np
 import cloudComPy as cc
 from cloudComPy import RANSAC_SD
 import shutil
-
+import time
 
 # conda activate CloudComPy310
 # cd C:\Users\domin\Documents\Studium\Master\CloudComPy310
@@ -50,7 +50,12 @@ for filename in os.listdir(folder_path):
             params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_CONE, False)
             params.setPrimEnabled(cc.RANSAC_SD.RANSAC_PRIMITIVE_TYPES.RPT_TORUS, False)
             
+            # Startzeit messen
+            start_time = time.time()
             meshes, clouds = cc.RANSAC_SD.computeRANSAC_SD(cloud, params)
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            print(f"Die Ausführung dauerte {elapsed_time:.2f} Sekunden.")
             print("meshes: ", meshes)
             print("clouds: ", clouds)
 
