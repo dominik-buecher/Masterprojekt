@@ -11,13 +11,17 @@ import time
 # conda activate CloudComPy310
 # cd C:\Users\domin\Documents\Studium\Master\CloudComPy310
 # envCloudComPy.bat
-# python C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\test2.py
+# python C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\2_RANSAC_shape_detection.py
 #from gendata import dataDir, isCoordEqual
 
+if True:
+    quality_type = "quality_good"
+else:
+    quality_type = "quality_bad"
 
-
+    
 # Definieren des Ordners mit Pointcloud-Dateien
-folder_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\cropped_pointcloud"
+folder_path = fr"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\{quality_type}\cropped_pointcloud"
 
 # Schleife, um alle Pointcloud-Dateien im Ordner zu verarbeiten
 for filename in os.listdir(folder_path):
@@ -64,7 +68,7 @@ for filename in os.listdir(folder_path):
             
             # Pfade für temporäre Dateien und für die Speicherung der Meshes und Mesh-Clouds
             temp_path = os.path.join(base_path, "tmp")
-            mesh_base_path = os.path.join(base_path, "dataset/quality_bad/meshes")
+            mesh_base_path = os.path.join(base_path, f"dataset/{quality_type}/meshes")
 
             # Erstellen Sie die Ordner, falls sie noch nicht existieren
             os.makedirs(temp_path, exist_ok=True)
@@ -86,10 +90,10 @@ for filename in os.listdir(folder_path):
                         os.makedirs(mesh_cloud_dir, exist_ok=True)
 
                         # Speichern des Meshs
-                        mesh_path = os.path.join(base_path, f"dataset/quality_bad/meshes/{filename}/mesh/mesh_{i + 1}.ply")
+                        mesh_path = os.path.join(base_path, f"dataset/{quality_type}/meshes/{filename}/mesh/mesh_{i + 1}.ply")
                         print("mesh_path: ", mesh_path)
                         cc.SaveMesh(mesh, mesh_path)
-                        mesh_cloud_path = os.path.join(base_path, f"dataset/quality_bad/meshes/{filename}/mesh_cloud/mesh_cloud_{i + 1}.ply")
+                        mesh_cloud_path = os.path.join(base_path, f"dataset/{quality_type}/meshes/{filename}/mesh_cloud/mesh_cloud_{i + 1}.ply")
                         print("mesh_cloud_path: ", mesh_cloud_path)
                         cc.SavePointCloud(clouds[i], mesh_cloud_path)
 

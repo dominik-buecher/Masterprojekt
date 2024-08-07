@@ -273,14 +273,14 @@ def mesh_only_green(folder_path, pointcloud_file_path):
 
 # Pfad zu dem Ordner, in dem sich die Pointcloud und die Mesh-Dateien befinden
 #folder_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_10.ply\mesh_cloud_color_green"
-# folder_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_10.ply\mesh_cloud"
-folder_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\new\mesh_cloud"
+folder_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_76.ply\mesh_cloud"
+# folder_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\new\mesh_cloud"
 
 # Pfad zur Pointcloud-Datei
 pointcloud_file_path = os.path.join(folder_path, "pointcloud.ply")
-pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_10.ply"
-# pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_10.ply"
-pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\new\pointcloud_copped_1.ply"
+pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud1\pointcloud_copped_75.ply"
+pointcloud_file_path = r"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud1\pointcloud_copped_76.ply"
+#pointcloud_file_path = r"C:\Users\Dominik\Documents\Studium\Master\Masterprojekt\Masterprojekt\src\CloudComPy\dataset\new\pointcloud_copped_1.ply"
 
 
 
