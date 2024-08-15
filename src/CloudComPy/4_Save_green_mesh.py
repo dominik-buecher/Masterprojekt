@@ -80,7 +80,7 @@ def pointcloud_red_mesh_normal(folder_path, pointcloud_file_path, i):
 
 
 # Pfade angeben
-for i in range(1, 101):    
+for i in range(1, 251):    
     folder_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_{i}.ply\mesh_cloud_color"
     pointcloud_file_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_{i}.ply"
 

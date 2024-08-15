@@ -28,7 +28,7 @@ def process_directory_structure(base_path, output_file):
             
             # Inkrementiere den Zähler für den nächsten Ordner
             i += 1
-            if i == 100:
+            if i == 251:
                 break
 
 if __name__ == "__main__":

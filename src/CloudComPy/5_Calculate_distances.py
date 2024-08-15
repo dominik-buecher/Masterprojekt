@@ -65,10 +65,10 @@ for i in range(1, 251):
     process_quality_data(mesh_path, mesh_cloud_path, output_file_path, i, quality='good', spherical=True)
 
 # Hauptprozess für schlechte Qualität
-for i in range(1, 61):
-    output_file_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\distance"
-    mesh_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\meshes\pointcloud_copped_{i}.ply\mesh"
-    mesh_cloud_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\meshes\pointcloud_copped_{i}.ply\mesh_cloud_color"
+# for i in range(1, 61):
+#     output_file_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\distance"
+#     mesh_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\meshes\pointcloud_copped_{i}.ply\mesh"
+#     mesh_cloud_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_bad\meshes\pointcloud_copped_{i}.ply\mesh_cloud_color"
     
-    process_quality_data(mesh_path, mesh_cloud_path, output_file_path, i, quality='bad', spherical=False)
-    process_quality_data(mesh_path, mesh_cloud_path, output_file_path, i, quality='bad', spherical=True)
+#     process_quality_data(mesh_path, mesh_cloud_path, output_file_path, i, quality='bad', spherical=False)
+#     process_quality_data(mesh_path, mesh_cloud_path, output_file_path, i, quality='bad', spherical=True)

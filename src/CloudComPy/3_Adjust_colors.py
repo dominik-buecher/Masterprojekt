@@ -63,7 +63,7 @@ def pointcloud_red_mesh_normal(folder_path, pointcloud_file_path, i):
 
             # Weiterer Code zum Verarbeiten der Pointcloud oder Mesh-Datei kann hier eingefügt werden
 
-for i in range(1, 101):
+for i in range(1, 251):
     folder_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\meshes\pointcloud_copped_{i}.ply\mesh_cloud"
     pointcloud_file_path = rf"C:\Users\domin\Documents\Studium\Master\Masterprojekt\src\CloudComPy\dataset\quality_good\cropped_pointcloud\pointcloud_copped_{i}.ply"
 
